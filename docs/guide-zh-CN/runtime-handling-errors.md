@@ -190,6 +190,7 @@ return [
             'class' => 'yii\web\Response',
             'on beforeSend' => function ($event) {
                 $response = $event->sender;
+                $response->format = yii\web\Response::FORMAT_JSON;
                 if ($response->data !== null) {
                     $response->data = [
                         'success' => $response->isSuccessful,
